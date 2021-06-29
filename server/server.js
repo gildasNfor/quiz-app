@@ -4,6 +4,8 @@ const PORT = 4000;
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const QuizSchema = require("./models/quiz.js");
+const QuestionSchema = require("./models/question.js");
 
 mongoose.connect("mongodb://localhost:27017/quizDB", {
   useNewUrlParser: true,
@@ -14,13 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const QuizSchema = {
-  categoty: String,
-  timed: Boolean,
-  duration: Number, //in minutes
-  questions: Array,
-};
-
+const Question = mongoose.model("Question", QuestionSchema);
 const Year1 = mongoose.model("Year1", QuizSchema);
 const Year2 = mongoose.model("Year2", QuizSchema);
 const Year3 = mongoose.model("Year3", QuizSchema);
