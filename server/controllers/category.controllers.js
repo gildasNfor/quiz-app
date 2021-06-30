@@ -41,10 +41,20 @@ const updateCategory = async (req, res) => {
 };
 
 const deleteCategory = async (req, res) => {
-  Category.findByIdAndRemove({ _id: req.params.id }, err => {
-    err
-      ? console.log(err)
-      : res.status(200).json({ message: "Successfully deleted" });
+  Quiz.find({ _id: req.params.id }, (err, quizes) => {
+    if (err) {
+      console.log(err);
+    } else {
+      quizes.forEach(quiz => {
+        quiz.category = "uncategorised";
+        quiz.save();
+      });
+      Category.findByIdAndRemove({ _id: req.params.id }, err => {
+        err
+          ? console.log(err)
+          : res.status(200).json({ message: "Successfully deleted" });
+      });
+    }
   });
 };
 

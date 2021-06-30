@@ -4,5 +4,4 @@ const categorySchema = {
   name: String,
 };
 
-exports.categorySchema = categorySchema;
-exports.Category = mongoose.model("Category", categorySchema);
+module.exports = mongoose.model("Category", categorySchema);

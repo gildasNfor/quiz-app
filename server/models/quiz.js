@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const category = require("./category.js");
-const categorySchema = category.categorySchema;
 
 const QuizSchema = {
-  category: categorySchema,
+  category: String,
+  name: String,
   timed: Boolean,
   duration: Number, //in minutes
   questions: [],
