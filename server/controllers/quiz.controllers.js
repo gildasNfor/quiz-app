@@ -27,7 +27,7 @@ const addQuiz = async (req, res) => {
       res.status(201).json({ newQuiz, message: "Successful" });
     } else {
       res
-        .status(201)
+        .status(409)
         .json({ found, message: "A quiz with the same name already exist" });
     }
   });

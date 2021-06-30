@@ -1,5 +1,5 @@
-const categoryObject = require("../models/category.js");
-const Category = categoryObject.Category;
+const Category = require("../models/category.js");
+const Quiz = require("../models/quiz.js");
 
 const getCategories = async (req, res) => {
   Category.find({}, (err, categories) => {
@@ -41,20 +41,24 @@ const updateCategory = async (req, res) => {
 };
 
 const deleteCategory = async (req, res) => {
-  Quiz.find({ _id: req.params.id }, (err, quizes) => {
-    if (err) {
-      console.log(err);
-    } else {
-      quizes.forEach(quiz => {
-        quiz.category = "uncategorised";
-        quiz.save();
-      });
-      Category.findByIdAndRemove({ _id: req.params.id }, err => {
-        err
-          ? console.log(err)
-          : res.status(200).json({ message: "Successfully deleted" });
-      });
-    }
+  Category.findOne({ _id: req.params.id }, (err, found) => {
+    console.log(found);
+    Quiz.find({ category: found.name }, (err, quizzes) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(quizzes);
+        quizzes.forEach(quiz => {
+          quiz.category = "uncategorised";
+          quiz.save();
+        });
+        Category.findByIdAndRemove({ _id: req.params.id }, err => {
+          err
+            ? console.log(err)
+            : res.status(200).json({ message: "Successfully deleted" });
+        });
+      }
+    });
   });
 };
 
