@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const categoryRoutes = require("./routes/category.routes");
 const quizRoutes = require("./routes/quiz.routes");
+const authRoutes = require("./routes/auth.routes");
 
 mongoose.connect("mongodb://localhost:27017/quizDB", {
   useNewUrlParser: true,
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/categories", categoryRoutes);
 app.use("/quiz", quizRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log("server running on port " + PORT);

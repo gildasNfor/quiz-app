@@ -1,7 +1,7 @@
 const Category = require("../models/category.js");
 const Quiz = require("../models/quiz.js");
 
-const getCategories = async (req, res) => {
+const getCategories = (req, res) => {
   Category.find({}, (err, categories) => {
     if (err) {
       console.log(err);
@@ -11,7 +11,7 @@ const getCategories = async (req, res) => {
   });
 };
 
-const addCategory = async (req, res) => {
+const addCategory = (req, res) => {
   Category.findOne({ name: req.body.name }, (err, found) => {
     if (err) console.log(err);
     if (!found) {
@@ -28,7 +28,7 @@ const addCategory = async (req, res) => {
   });
 };
 
-const updateCategory = async (req, res) => {
+const updateCategory = (req, res) => {
   Category.findByIdAndUpdate(
     { _id: req.params.id },
     { name: req.body.name },
@@ -40,7 +40,7 @@ const updateCategory = async (req, res) => {
   );
 };
 
-const deleteCategory = async (req, res) => {
+const deleteCategory = (req, res) => {
   Category.findOne({ _id: req.params.id }, (err, found) => {
     console.log(found);
     Quiz.find({ category: found.name }, (err, quizzes) => {
@@ -62,9 +62,20 @@ const deleteCategory = async (req, res) => {
   });
 };
 
+const getCategoryById = (req, res) => {
+  Category.findOne({ _id: req.params.id })
+    .then(cat => {
+      return res.status(200).json(cat);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
 module.exports = {
   getCategories,
   addCategory,
   updateCategory,
   deleteCategory,
+  getCategoryById,
 };

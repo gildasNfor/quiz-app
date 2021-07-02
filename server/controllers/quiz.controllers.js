@@ -1,6 +1,6 @@
 const Quiz = require("../models/quiz.js");
 
-const getQuizes = async (req, res) => {
+const getQuizes = (req, res) => {
   Quiz.find({}, (err, list) => {
     if (err) {
       console.log(err);
@@ -11,7 +11,7 @@ const getQuizes = async (req, res) => {
   });
 };
 
-const addQuiz = async (req, res) => {
+const addQuiz = (req, res) => {
   Quiz.findOne({ name: req.body.name }, (err, found) => {
     if (err) console.log(err);
 
@@ -33,7 +33,7 @@ const addQuiz = async (req, res) => {
   });
 };
 
-const updateQuiz = async (req, res) => {
+const updateQuiz = (req, res) => {
   Quiz.findOne({ _id: req.params.id }, (err, found) => {
     Quiz.findByIdAndUpdate(
       { _id: req.params.id },
@@ -47,7 +47,7 @@ const updateQuiz = async (req, res) => {
   });
 };
 
-const deleteQuiz = async (req, res) => {
+const deleteQuiz = (req, res) => {
   Quiz.findByIdAndRemove({ _id: req.params.id }, err => {
     err
       ? console.log(err)
@@ -55,9 +55,20 @@ const deleteQuiz = async (req, res) => {
   });
 };
 
+const getQuizById = (req, res) => {
+  Quiz.findOne({ _id: req.params.id })
+    .then(quiz => {
+      return res.status(200).json(quiz);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
 module.exports = {
   getQuizes,
   addQuiz,
   updateQuiz,
   deleteQuiz,
+  getQuizById,
 };
