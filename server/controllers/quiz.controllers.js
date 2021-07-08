@@ -39,7 +39,12 @@ const updateQuiz = (req, res) => {
   Quiz.findOne({ _id: req.params.id }, (err, found) => {
     Quiz.findByIdAndUpdate(
       { _id: req.params.id },
-      { questions: [...found.questions, req.body.newQuestion] },
+      {
+        questions: req.body.newQuestion && [
+          ...found.questions,
+          req.body.newQuestion,
+        ],
+      },
       function (err) {
         err
           ? console.log(err)

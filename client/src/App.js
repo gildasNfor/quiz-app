@@ -3,6 +3,7 @@ import SetQuiz from "./pages/SetQuiz";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import SetQuestion from "./pages/SetQuestion";
+import QuizList from "./pages/QuizList";
 
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ function App() {
             <Route path="/signup" exact render={() => <SignUp />} />
             <Route path="/set-quiz" exact render={() => <SetQuiz />} />
             <Route path="/set-question" exact render={() => <SetQuestion />} />
+            <Route path="/update-quiz" exact render={() => <QuizList />} />
             {/* <Route path="/signup" exact="exact" component={Signup} />
             <Route path="/chat" exact="exact" component={Chat} />  */}
           </Switch>

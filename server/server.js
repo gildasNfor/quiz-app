@@ -8,6 +8,7 @@ const categoryRoutes = require("./routes/category.routes");
 const quizRoutes = require("./routes/quiz.routes");
 const authRoutes = require("./routes/auth.routes");
 const evaluateRoutes = require("./routes/evaluate.routes");
+const User = require("./models/user");
 mongoose.connect("mongodb://localhost:27017/quizDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -20,6 +21,21 @@ app.use("/categories", categoryRoutes);
 app.use("/quiz", quizRoutes);
 app.use("/auth", authRoutes);
 app.use("/evaluate", evaluateRoutes);
+
+User.findOne({ username: "admin", password: "admin1234" })
+  .then(admin => {
+    if (admin) {
+      return;
+    }
+    const administrator = new User({
+      username: "admin",
+      password: "admin1234",
+    });
+    return administrator.save();
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 app.listen(PORT, () => {
   console.log("server running on port " + PORT);

@@ -10,6 +10,10 @@ const Home = ({ currentUser }) => {
         <button className="btn btn-lg btn-primary">Set a Quiz</button>
       </Link>
       <hr />
+      <Link to={currentUser.isAdmin && "/update-quiz"}>
+        <button className="btn btn-lg btn-primary">Update a Quiz</button>
+      </Link>
+      <hr />
       <Link to="">
         <button className="btn btn-lg btn-primary">Take a Quiz</button>
       </Link>
