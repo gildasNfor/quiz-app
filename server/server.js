@@ -30,6 +30,7 @@ User.findOne({ username: "admin", password: "admin1234" })
     const administrator = new User({
       username: "admin",
       password: "admin1234",
+      isAdmin: true,
     });
     return administrator.save();
   })
