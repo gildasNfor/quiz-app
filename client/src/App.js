@@ -1,4 +1,9 @@
 import Home from "./pages/Home";
+import SetQuiz from "./pages/SetQuiz";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import SetQuestion from "./pages/SetQuestion";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,10 +19,13 @@ function App() {
       <div className="app__body">
         <Router>
           <Switch>
-            <Route path="/" exact="exact" component={Home} />
-            {/* <Route path="/login" exact="exact" component={Login} />
-            <Route path="/signup" exact="exact" component={Signup} />
-            <Route path="/chat" exact="exact" component={Chat} /> */}
+            <Route path="/home" exact render={() => <Home />} />
+            <Route path="/" exact render={() => <Login />} />
+            <Route path="/signup" exact render={() => <SignUp />} />
+            <Route path="/set-quiz" exact render={() => <SetQuiz />} />
+            <Route path="/set-question" exact render={() => <SetQuestion />} />
+            {/* <Route path="/signup" exact="exact" component={Signup} />
+            <Route path="/chat" exact="exact" component={Chat} />  */}
           </Switch>
         </Router>
       </div>

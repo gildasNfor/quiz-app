@@ -1,13 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ currentUser }) => {
   return (
     <div>
-      <button className="btn btn-lg btn-primary">Set a Quiz</button>
+      <Link to={currentUser.isAdmin && "/set-quiz"}>
+        <button className="btn btn-lg btn-primary">Set a Quiz</button>
+      </Link>
       <hr />
-      <button className="btn btn-lg btn-primary">Take a Quiz</button>
+      <Link to="">
+        <button className="btn btn-lg btn-primary">Take a Quiz</button>
+      </Link>
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = ({ auth }) => {
+  return {
+    currentUser: auth.user,
+  };
+};
+
+// const mapDispatchToProps = dispatch => {
+//   return bindActionCreators({ setUser }, dispatch);
+// };
+
+export default connect(mapStateToProps)(Home);

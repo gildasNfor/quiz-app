@@ -12,11 +12,11 @@ const getCategories = (req, res) => {
 };
 
 const addCategory = (req, res) => {
-  Category.findOne({ name: req.body.name }, (err, found) => {
+  Category.findOne({ name: req.body.name.toLowerCase() }, (err, found) => {
     if (err) console.log(err);
     if (!found) {
       const newCategory = new Category({
-        name: req.body.name,
+        name: req.body.name.toLowerCase(),
       });
       newCategory.save();
       res.status(201).json({
@@ -31,7 +31,7 @@ const addCategory = (req, res) => {
 const updateCategory = (req, res) => {
   Category.findByIdAndUpdate(
     { _id: req.params.id },
-    { name: req.body.name },
+    { name: req.body.name.toLowerCase() },
     function (err) {
       err
         ? console.log(err)

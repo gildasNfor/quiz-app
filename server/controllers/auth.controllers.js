@@ -45,7 +45,7 @@ const userLogin = (req, res) => {
               expiresIn: "1d",
             }
           );
-          console.log(user);
+
           return res.status(200).json({
             message: "Auth successful",
             userDetails: {

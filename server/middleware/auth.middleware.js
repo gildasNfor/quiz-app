@@ -6,7 +6,7 @@ const checkJWT = (req, res, next) => {
     req.headers.authorization.startsWith("Bearer")
   ) {
     const token = req.headers.authorization.split(" ")[1];
-    console.log(token);
+
     jwt.verify(token, "just-for-testing", (err, user) => {
       if (err) {
         return res.sendStatus(403);

@@ -17,7 +17,9 @@ const addQuiz = (req, res) => {
 
     if (!found) {
       const newQuiz = new Quiz({
-        category: req.body.category ? req.body.category : "uncategoriesd",
+        category: req.body.category
+          ? req.body.category.toLowerCase()
+          : "uncategoriesd",
         name: req.body.name,
         timed: req.body.timed,
         duration: req.body.duration,
