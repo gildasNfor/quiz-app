@@ -4,6 +4,8 @@ const PORT = 4000;
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const bcrypt = require("bcrypt");
+
 const categoryRoutes = require("./routes/category.routes");
 const quizRoutes = require("./routes/quiz.routes");
 const authRoutes = require("./routes/auth.routes");
@@ -22,14 +24,14 @@ app.use("/quiz", quizRoutes);
 app.use("/auth", authRoutes);
 app.use("/evaluate", evaluateRoutes);
 
-User.findOne({ username: "admin", password: "admin1234" })
+User.findOne({ username: "admin" })
   .then(admin => {
     if (admin) {
       return;
     }
     const administrator = new User({
       username: "admin",
-      password: "admin1234",
+      password: bcrypt.hashSync("admin1234", 10),
       isAdmin: true,
     });
     return administrator.save();
