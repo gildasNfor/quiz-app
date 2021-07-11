@@ -6,7 +6,6 @@ const getQuizes = (req, res) => {
       console.log(err);
       res.status(500).json({ message: "Something went wrong" });
     } else {
-      console.log(list);
       const quizzes = list.map(listItem => {
         return {
           ...listItem.toJSON(),

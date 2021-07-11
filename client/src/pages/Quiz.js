@@ -30,9 +30,12 @@ const Quiz = props => {
   };
 
   const setAnswer = answer => {
-    console.log("yh");
+    const temp = answerSheet;
+    temp.splice(questionNumber, 1, answer);
+    setAnswerSheet(temp);
+    console.log(answerSheet);
+    console.log(answer);
   };
-  console.log(answerSheet);
   console.log(questionNumber);
   return (
     <div>
