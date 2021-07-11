@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 const Home = ({ currentUser }) => {
   return (
     <div>
-      <Link to={currentUser.isAdmin && "/set-quiz"}>
+      <Link to={currentUser?.isAdmin && "/set-quiz"}>
         <button className="btn btn-lg btn-primary">Set a Quiz</button>
       </Link>
       <hr />
-      <Link to={currentUser.isAdmin && "/update-quiz"}>
+      <Link to={currentUser?.isAdmin && "/update-quiz"}>
         <button className="btn btn-lg btn-primary">Update a Quiz</button>
       </Link>
       <hr />
-      <Link to="">
+      <Link to="select-quiz">
         <button className="btn btn-lg btn-primary">Take a Quiz</button>
       </Link>
     </div>

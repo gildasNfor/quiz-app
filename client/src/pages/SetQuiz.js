@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { setQuiz } from "../redux/actions/quizActions";
 import Category from "../components/Category";
 
-const SetQuiz = () => {
+const SetQuiz = ({ setQuiz }) => {
   const history = useHistory();
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);

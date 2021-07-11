@@ -6,7 +6,21 @@ const getQuizes = (req, res) => {
       console.log(err);
       res.status(500).json({ message: "Something went wrong" });
     } else {
-      res.status(200).json(list);
+      console.log(list);
+      const quizzes = list.map(listItem => {
+        return {
+          ...listItem.toJSON(),
+          questions: listItem.questions
+            ? listItem.questions.map(specificQuestion => {
+                return {
+                  question: specificQuestion.question,
+                  answers: specificQuestion.answers,
+                };
+              })
+            : [],
+        };
+      });
+      res.status(200).json(quizzes);
     }
   });
 };
@@ -65,7 +79,12 @@ const deleteQuiz = (req, res) => {
 const getQuizById = (req, res) => {
   Quiz.findOne({ _id: req.params.id })
     .then(quiz => {
-      return res.status(200).json(quiz);
+      return res.status(200).json({
+        ...quiz.toJSON(),
+        questions: quiz.questions.map(question => {
+          return { question: question.question, answers: question.answers };
+        }),
+      });
     })
     .catch(err => {
       console.log(err);

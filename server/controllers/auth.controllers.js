@@ -65,7 +65,41 @@ const userLogin = (req, res) => {
   });
 };
 
+const getUser = (req, res) => {
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    const authorization = req.headers.authorization.split(" ")[1];
+
+    jwt.verify(authorization, "just-for-testing", (err, foundUser) => {
+      if (err) {
+        return res.sendStatus(403);
+      }
+      console.log(foundUser);
+      User.findOne({ _id: foundUser.userId })
+        .then(user => {
+          if (user) {
+            const currentUser = {
+              username: user.username,
+              isAdmin: user.isAdmin,
+              userId: user._id,
+            };
+            return res.status(200).json(currentUser);
+          }
+          return res.sendStatus(404);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+  } else {
+    res.sendStatus(401);
+  }
+};
+
 module.exports = {
   userSignUp,
   userLogin,
+  getUser,
 };
