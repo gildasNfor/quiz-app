@@ -37,7 +37,7 @@ const SignUp = () => {
           </div>
           <div className="form-group">
             <p className="header">
-              Already have an account? <Link to="signin">Sign In</Link>
+              Already have an account? <Link to="signin">Sign Up</Link>
             </p>
           </div>
         </form>
