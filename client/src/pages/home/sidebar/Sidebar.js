@@ -4,7 +4,7 @@ import "./sidebar.css";
 const Sidebar = () => {
   return (
     <div className="sidebar__container">
-      <div className="heading">
+      <div className="logo">
         <i class="fas fa-address-book icon"></i>
         <h3>Quiz</h3>
       </div>

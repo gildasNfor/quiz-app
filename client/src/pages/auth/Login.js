@@ -19,6 +19,7 @@ const Login = () => {
           <div className="form-group">
             <i class="fas fa-lock icons"></i>
             <input
+              type="password"
               className="form-control input-field"
               placeholder="Enter your Password"
             />

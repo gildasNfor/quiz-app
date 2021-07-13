@@ -33,11 +33,11 @@ const SignUp = () => {
             />
           </div>
           <div className="form-group">
-            <button className="form-control btn-lg button">Sign In</button>
+            <button className="form-control btn-lg button">Sign Up</button>
           </div>
           <div className="form-group">
             <p className="header">
-              Already have an account? <Link to="signin">Sign Up</Link>
+              Already have an account? <Link to="signin">Sign In</Link>
             </p>
           </div>
         </form>
