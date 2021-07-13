@@ -8,20 +8,8 @@
   display: grid;
   place-items: center;
   /* background-color: #dadbd3; */
-  height: 100vh;
-  background-color: #52006a;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* height: 100vh; */
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-
-.app__body {
-  display: flex;
-  height: 90vh;
-  width: 80vw;
-  place-content: center;
-  align-items: center;
-  background-color: #47597e;
-  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
 }
 
 .note {

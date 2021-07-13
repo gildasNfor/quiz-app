@@ -1,0 +1,79 @@
+.login__container {
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  width: 40vw;
+  place-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: -1px 4px 20px -6px rgba(231, 216, 216, 0.7);
+  border-radius: 10px;
+}
+
+.header {
+  color: black;
+}
+
+.box {
+  background-color: #edf6e5;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.login__container > p {
+  color: #dddddd;
+}
+
+.login__container > form > div {
+  margin: 20px;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.form-group > i {
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  padding-bottom: 0;
+}
+
+.icons {
+  font-size: 1rem;
+  color: #3edbf0;
+  padding: 10px;
+  min-width: 40px;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-right: none;
+  /* margin-top: 10%; */
+}
+
+.form-group > .input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none !important;
+  border-left: none;
+  color: white;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+input:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+/* 
+::placeholder {
+  font-family: "Raleway", sans-serif;
+} */
+
+form {
+  width: 80%;
+}
+
+.form-group > .button {
+  color: white;
+  background-color: #3edbf0;
+}
