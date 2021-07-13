@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import SetQuiz from "./pages/SetQuiz";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
@@ -35,11 +35,12 @@ function App({ setUser }) {
   //     });
   // }, []);
   return (
-    <div className="app">
+    <div className="">
       <Router>
         <Switch>
           <Route path="/login" exact render={() => <Login />} />
           <Route path="/signup" exact render={() => <SignUp />} />
+          <Route path="/home" exact render={() => <Home />} />
           <Redirect to="/login"></Redirect>
           {/* <Route path="/home" exact render={() => <Home />} />
             <Route path="/" exact render={() => <Login />} />
