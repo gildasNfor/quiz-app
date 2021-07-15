@@ -1,5 +1,7 @@
 .home {
   display: flex;
+  /* min-width: fit-content; */
+  overflow-y: scroll;
 }
 
 .black {
