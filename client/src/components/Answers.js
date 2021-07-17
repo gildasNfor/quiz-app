@@ -17,11 +17,7 @@ const Answers = props => {
   return (
     <Droppable droppableId={`droppable${question.id}`} type={`${questionNum}`}>
       {(provided, snapshot) => (
-        <div
-          className="answers__div"
-          ref={provided.innerRef}
-          // style={getAnswerListStyle(snapshot.isDraggingOver)}
-        >
+        <div className="answers__div" ref={provided.innerRef}>
           {question.answers.map((answer, index) => {
             return (
               <Draggable
@@ -34,10 +30,6 @@ const Answers = props => {
                     className="answer__box"
                     ref={provided.innerRef}
                     {...provided.draggableProps}
-                    // style={getItemStyle(
-                    //   snapshot.isDragging,
-                    //   provided.draggableProps.style
-                    // )}
                   >
                     <span {...provided.dragHandleProps}>
                       <FontAwesomeIcon

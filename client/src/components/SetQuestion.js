@@ -100,11 +100,7 @@ const SetQuestion = () => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable" type="QUESTIONS">
           {(provided, snapshot) => (
-            <div
-              className="questions"
-              ref={provided.innerRef}
-              style={getQuestionListStyle(snapshot.isDraggingOver)}
-            >
+            <div className="questions" ref={provided.innerRef}>
               {questions.map((question, index) => (
                 <Draggable
                   key={question.id}
