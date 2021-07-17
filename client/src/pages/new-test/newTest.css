@@ -33,9 +33,53 @@
   font-size: 1.5rem;
 }
 
+.questions {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
 .question__box {
+  /* display: inline-block; */
+  /* width: 100%; */
   margin: 0.5rem 0;
   background-color: #edf6e5;
   padding: 2rem 6rem;
   border-radius: 5px;
+  height: fit-content;
+}
+
+.answers__div {
+  width: 100%;
+}
+
+.answers {
+  margin: 0.5rem 0 0 2rem;
+  height: 35px;
+}
+
+.answer__box {
+  position: relative;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* 
+.answer__box > .MuiSvgIcon-root {
+  color: red;
+} */
+
+.answer__box > .MuiIconButton-root {
+  /* color: red; */
+  border: 1px solid black;
+  border-radius: 0;
+  height: 35px;
+  margin: 0.5rem 0 0;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.add__question {
+  width: 100%;
+  background-color: red;
 }

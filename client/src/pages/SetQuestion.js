@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axiosInstance from "../axios/axios";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Answer from "../components/Answer";
+import Answer from "../components/Answers";
 
 const SetQuestion = props => {
   const [question, setQuestion] = useState("");
