@@ -13,17 +13,17 @@ const SetQuestion = () => {
     {
       id: uuidv4(),
       question: "",
-      answers: ["", ""],
+      answers: [""],
     },
     {
       id: uuidv4(),
       question: "",
-      answers: ["", ""],
+      answers: [""],
     },
     {
       id: uuidv4(),
       question: "",
-      answers: ["", ""],
+      answers: [""],
     },
     // {
     //   id: uuidv4(),
@@ -119,17 +119,17 @@ const SetQuestion = () => {
                           justifyContent: "space-between",
                         }}
                       >
-                        <h4 style={{ paddingTop: "7px" }}>
+                       <div className="question__number">
                           <span {...provided.dragHandleProps}>
                             <FontAwesomeIcon
+                              className="grip"
                               icon={"grip-vertical"}
-                              // style={{ float: "left" }}
                             />
-                          </span>{" "}
-                          &nbsp; Question {index + 1}
-                        </h4>
+                          </span>
+                          <span className="number">Question {index + 1}</span>
+                        </div>
                         <IconButton index={index} onClick={deleteQuestion}>
-                          <ClearIcon />
+                          <i class="fas fa-times" aria-hidden="true"></i>
                         </IconButton>
                       </div>
                       <div>
@@ -152,17 +152,12 @@ const SetQuestion = () => {
                           flexDirection: "row-reverse",
                         }}
                       >
-                        <button
+                        <span className="add-answer"
                           id={index}
                           onClick={addAnswer}
-                          style={{
-                            border: "0",
-                            color: "blue",
-                            marginTop: "5px",
-                          }}
                         >
                           add answer +
-                        </button>
+                        </span>
                       </div>
                     </div>
                   )}
@@ -173,13 +168,7 @@ const SetQuestion = () => {
           )}
         </Droppable>
       </DragDropContext>
-      <button
-        style={{ width: "100%", backgroundColor: "#96BAFF", color: "blue" }}
-        className="btn btn-lg add__question"
-        onClick={addQuestion}
-      >
-        Add Question +
-      </button>
+      <button className="btn primary block" onClick={addQuestion}>Add question</button>
     </div>
   );
 };

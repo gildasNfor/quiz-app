@@ -21,8 +21,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { setUser } from "./redux/actions/authActions";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './fonts/MaxWebW03-Book.ttf';
+
 import "./App.css";
-import "./pages/auth/auth.css";
 
 function App({ setUser }) {
   // useEffect(() => {

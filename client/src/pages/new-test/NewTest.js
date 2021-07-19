@@ -50,10 +50,8 @@ const NewTest = () => {
     const { index } = event.target;
     const temp = questions;
     temp.splice(index, 1);
-    console.log(temp);
     setQuestions(questions => [...temp]);
   };
-  console.log(questions);
   return (
     <div className="new__test">
       <Sidebar />
@@ -66,7 +64,7 @@ const NewTest = () => {
             placeholder="Quiz Name"
           />
         </div>
-        <SetQuestion />
+          <SetQuestion />
       </div>
     </div>
   );

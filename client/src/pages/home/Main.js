@@ -8,36 +8,15 @@ const Main = () => {
     <div className="main__div">
       <Navbar />
       <div className="table__header">
-        <div className="col-4">Quiz Name</div>
-        <div className="col-4">Taken</div>
-        <div className="col-4">Score</div>
+        <div className="col-6">Quiz Name</div>
+        <div className="col-3">Category</div>
+        <div className="col-1">Taken</div>
+        <div className="col-2">Date</div>
       </div>
       <hr />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
-      <Quiz />
+      <div className="table__body">
+        {new Array(20).fill("",0,20).map((_,i) => <Quiz key={i}/>)}
+      </div>
     </div>
   );
 };

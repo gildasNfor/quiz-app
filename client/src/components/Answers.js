@@ -31,26 +31,24 @@ const Answers = props => {
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                   >
-                    <span {...provided.dragHandleProps}>
+                    <div class="answer__list" {...provided.dragHandleProps}>
                       <FontAwesomeIcon
+                        className="grip"
                         icon={"grip-vertical"}
-                        style={{ float: "left", marginTop: "1rem" }}
                       />
-                    </span>
-                    <h6 style={{ marginTop: "0.8rem", marginLeft: "0.5rem" }}>
-                      {letters[index]}
-                    </h6>
+                      <span> {letters[index]}</span>
+                    </div>
                     <input
                       className="form-control answers"
                       type="text"
                       placeholder="Answer"
                     />
-                    <IconButton style={{ color: "green" }}>
-                      <CheckIcon />
-                    </IconButton>
-                    <IconButton index={index} onClick={handleClick}>
-                      <ClearIcon />
-                    </IconButton>
+                   <div className="check-button">
+                     <i class="fas fa-check success" aria-hidden="true"></i>
+                   </div>
+                    <div className="check-button neutral" onClick={handleClick}>
+                     <i class="fas fa-times" aria-hidden="true"></i>
+                   </div>
                   </div>
                 )}
               </Draggable>

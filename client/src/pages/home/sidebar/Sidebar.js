@@ -6,10 +6,10 @@ const Sidebar = () => {
     <div className="sidebar__container">
       <div className="logo">
         <i class="fas fa-address-book icon"></i>
-        <h3>Quiz</h3>
+        <span>Quizer</span>
       </div>
       <div className="button__box">
-        <button className="btn btn-lg btn-primary">New Quiz +</button>
+        <button className="btn block primary block"><span>New Quiz</span><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></button>
       </div>
     </div>
   );
