@@ -1,0 +1,63 @@
+.question__box {
+  margin: 0.5rem 0;
+  background-color: inherit;
+  padding: 2rem 6rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  height: fit-content;
+}
+
+.filter-switch label {
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: red;
+}
+input:not(:checked) > label {
+  --bg-opacity: 0;
+  box-shadow: none;
+}
+
+.label {
+  color: grey;
+  font-weight: 600;
+  border: 0;
+  border-right: 1px solid red;
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  margin: 0.5rem 0;
+  padding: 0 10px;
+}
+
+.label:hover {
+  color: green;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.answer {
+  margin: 0.5rem 1rem;
+}
+
+.vl {
+  border-left: 0.5px solid grey;
+  margin-left: 10px;
+  /* height: 100%; */
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+button:hover {
+  border-radius: 5px;
+  background-color: greenyellow;
+}
+
+.green {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}

@@ -1,0 +1,140 @@
+.new__test {
+  display: flex;
+  /* min-width: fit-content; */
+  overflow-y: scroll;
+}
+
+.quiz__name {
+  margin-bottom: 10px;
+}
+
+.quiz__name > input {
+  width: 100%;
+  outline: 0px !important;
+  border: none;
+  border-bottom: 1px solid #888DA0;
+}
+
+.main__div {
+  height: 100vh;
+  width: calc(100vw - 15vw);
+  padding: 1rem 2rem;
+}
+
+.name:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  border-bottom: 3px solid #424242;
+}
+
+.name::placeholder {
+  font-size: 1.5rem;
+}
+
+.questions {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.question__box {
+  /* display: inline-block; */
+  /* width: 100%; */
+  margin: 0.5rem 0;
+  box-shadow: -1px 20px 50px -6px rgb(0 0 0 / 35%);
+  padding: 2rem 6rem;
+  border-radius: 5px;
+  height: fit-content;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.answers__div {
+  width: 100%;
+}
+
+.answers {
+  height: 35px;
+  margin-left: 15px;
+}
+
+.answer__box {
+  position: relative;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  align-items: center;
+  margin-top: 5px;
+  margin-botto: 5px;
+}
+/* 
+.answer__box > .MuiSvgIcon-root {
+  color: red;
+} */
+
+.answer__box > .MuiIconButton-root {
+  /* color: red; */
+  border: 1px solid black;
+  border-radius: 0;
+  height: 35px;
+  margin: 0.5rem 0 0;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.answer__list{
+  display: flex;
+  align-items: center;
+}
+
+.add__question {
+  width: 100%;
+  background-color: red;
+}
+
+.question__number {
+  display: flex;
+  align-items:center;
+}
+.question__number .number{
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.grip{
+  color: var(--color-dark-10)
+}
+
+.check-button {
+  background-color: #E5F8F1;
+  align-content: center;
+  text-align: center;
+  border-radius: 3px;
+  width: 50px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 3px;
+  align-content: center;
+  display: inline-block;
+}
+.check-button i {
+    vertical-align: middle;
+}
+.check-button:hover{
+  cursor: pointer;
+}
+.check-button.neutral {
+  background-color: #f9f9f9;
+}
+.check-button.neutral:hover {
+  background-color: var(--color-red-50);
+}
+
+.add-answer {
+  color: var(--color-dark-10);
+  margin-top: 5px;
+}
+.add-answer:hover {
+  cursor: pointer;
+}
